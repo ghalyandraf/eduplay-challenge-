@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#7c4dff">
+
+    <title>EduPlay - Pahlawan Digital</title>
+
+    <meta name="description" content="EduPlay adalah permainan edukasi interaktif untuk belajar nilai-nilai Pancasila di era digital.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================================= -->
+    <!-- SPRITE ICON (SVG) -->
+    <!-- ================================= -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+        <defs>
+            <symbol id="i-star" viewBox="0 0 24 24"><polygon points="12 2.5 15 9 22 9.8 16.8 14.6 18.3 21.5 12 18 5.7 21.5 7.2 14.6 2 9.8 9 9"/></symbol>
+            <symbol id="i-sparkles" viewBox="0 0 24 24"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></symbol>
+            <symbol id="i-circle" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/></symbol>
+            <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c0-3.5 3-6 6.5-6s6.5 2.5 6.5 6"/><circle cx="17" cy="9" r="2.5"/><path d="M17 14c2.8 0 4.8 2 4.8 5"/></symbol>
+            <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="13" r="8"/><path d="M12 8v5l3 2"/><path d="M9 2h6"/></symbol>
+            <symbol id="i-book" viewBox="0 0 24 24"><path d="M5 4.5A2.5 2.5 0 0 1 7.5 2H19v16H7.5A2.5 2.5 0 0 0 5 20.5z"/><path d="M5 20.5A2.5 2.5 0 0 0 7.5 22H19v-4"/></symbol>
+            <symbol id="i-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.2 9a3 3 0 1 1 4.3 2.7c-.9.5-1.5 1.1-1.5 2.3"/><path d="M12 17.2h.01"/></symbol>
+            <symbol id="i-bulb" viewBox="0 0 24 24"><path d="M9 18h6"/><path d="M10 21h4"/><path d="M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0 0 12 3z"/></symbol>
+            <symbol id="i-chat" viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-11.7 7L3 21l2-5.5A8 8 0 1 1 21 12z"/></symbol>
+            <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></symbol>
+            <symbol id="i-camera" viewBox="0 0 24 24"><path d="M4 8h3l2-3h6l2 3h3a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1z"/><circle cx="12" cy="13.5" r="3.5"/></symbol>
+            <symbol id="i-check" viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 6.5"/></symbol>
+            <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+            <symbol id="i-check-circle" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3 6-6.5"/></symbol>
+            <symbol id="i-x-circle" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9 9l6 6M15 9l-6 6"/></symbol>
+            <symbol id="i-rocket" viewBox="0 0 24 24"><path d="M12 15l-3-3a22 22 0 0 1 2-4c2.5-4 6-5 10-5 0 4-1 7.5-5 10a22 22 0 0 1-4 2z"/><path d="M9 12H4s.5-3 2-4c1.5-1 4-.5 4-.5"/><path d="M12 15v5s3-.5 4-2c1-1.5.5-4 .5-4"/><path d="M5 15c-1.5 1-2 4-2 6 2 0 5-.5 6-2"/></symbol>
+            <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+            <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M20 11a8 8 0 0 0-14.5-3.5L4 9"/><path d="M4 4v5h5"/><path d="M4 13a8 8 0 0 0 14.5 3.5L20 15"/><path d="M20 20v-5h-5"/></symbol>
+            <symbol id="i-trophy" viewBox="0 0 24 24"><path d="M8 21h8"/><path d="M12 17v4"/><path d="M7 4h10v5a5 5 0 0 1-10 0z"/><path d="M7 6H4v2a3 3 0 0 0 3 3"/><path d="M17 6h3v2a3 3 0 0 1-3 3"/></symbol>
+            <symbol id="i-gamepad" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="11" rx="5"/><path d="M7 12.5h4M9 10.5v4"/><path d="M15.5 11.5h.01M18 13.5h.01"/></symbol>
+            <symbol id="i-hero" viewBox="0 0 24 24"><path d="M12 2l8 3v6c0 5-3.5 9-8 11-4.5-2-8-6-8-11V5z"/><polygon points="12 7 13.2 10 16.5 10.3 14 12.4 14.8 15.6 12 13.9 9.2 15.6 10 12.4 7.5 10.3 10.8 10" fill="currentColor" stroke="none"/></symbol>
+        </defs>
+    </svg>
+
+    <!-- DEKORASI LATAR -->
+    <div class="background-decoration decoration-one"></div>
+    <div class="background-decoration decoration-two"></div>
+
+    <div class="floaties" aria-hidden="true">
+        <span style="left:6%;  top:18%; animation-delay:0s;   color:#ffc928"><svg class="icon icon-fill"><use href="#i-star"/></svg></span>
+        <span style="left:90%; top:14%; animation-delay:1s;   color:#ff5c8a"><svg class="icon icon-fill"><use href="#i-star"/></svg></span>
+        <span style="left:12%; top:70%; animation-delay:2s;   color:#2f9bff"><svg class="icon"><use href="#i-rocket"/></svg></span>
+        <span style="left:86%; top:64%; animation-delay:.5s;  color:#7c4dff"><svg class="icon"><use href="#i-sparkles"/></svg></span>
+        <span style="left:48%; top:6%;  animation-delay:1.5s; color:#ff8a3d"><svg class="icon"><use href="#i-sparkles"/></svg></span>
+        <span style="left:30%; top:88%; animation-delay:2.5s; color:#2fc77a"><svg class="icon"><use href="#i-trophy"/></svg></span>
+        <span style="left:70%; top:90%; animation-delay:.8s;  color:#ffc928"><svg class="icon icon-fill"><use href="#i-star"/></svg></span>
+    </div>
+
+    <!-- HEADER -->
+    <header class="navbar">
+        <a href="#" class="brand">
+            <span class="brand-logo"><svg class="icon icon-fill"><use href="#i-star"/></svg></span>
+            <span>Edu<span class="brand-highlight">Play</span></span>
+        </a>
+
+        <div class="navbar-info">
+            <span class="status-dot"></span>
+            Petualangan Kuis Seru
+        </div>
+    </header>
+
+
+    <main class="container">
+
+        <!-- ================================= -->
+        <!-- HALAMAN PERSIAPAN -->
+        <!-- ================================= -->
+
+        <section id="setupScreen" class="screen active">
+
+            <div class="hero">
+                <div class="mascot" aria-hidden="true"><svg class="icon"><use href="#i-hero"/></svg></div>
+
+                <div class="hero-label">
+                    <svg class="icon"><use href="#i-gamepad"/></svg> BELAJAR JADI LEBIH SERU
+                </div>
+
+                <h1>
+                    Jadilah <span>Pahlawan Digital!</span>
+                </h1>
+
+                <p>
+                    Ajak teman satu tim berdiskusi, jawab setiap tantangan,
+                    dan kumpulkan bintang sebanyak-banyaknya!
+                </p>
+            </div>
+
+
+            <div class="main-card">
+
+                <!-- IDENTITAS TIM -->
+                <div class="section-heading">
+
+                    <div>
+                        <span class="step-label">LANGKAH 1</span>
+                        <h2>Pilih Tim</h2>
+                        <p>Pilih kelompok yang akan bermain di laptop ini.</p>
+                    </div>
+
+                    <div class="heading-icon"><svg class="icon"><use href="#i-users"/></svg></div>
+
+                </div>
+
+
+                <div class="team-grid">
+
+                    <button type="button" class="team-option selected" data-team="A">
+                        <span class="team-icon"><svg class="icon icon-fill"><use href="#i-circle"/></svg></span>
+                        <strong>Tim A</strong>
+                        <small>Kelompok Biru</small>
+                    </button>
+
+                    <button type="button" class="team-option" data-team="B">
+                        <span class="team-icon"><svg class="icon icon-fill"><use href="#i-circle"/></svg></span>
+                        <strong>Tim B</strong>
+                        <small>Kelompok Ungu</small>
+                    </button>
+
+                    <button type="button" class="team-option" data-team="C">
+                        <span class="team-icon"><svg class="icon icon-fill"><use href="#i-circle"/></svg></span>
+                        <strong>Tim C</strong>
+                        <small>Kelompok Oranye</small>
+                    </button>
+
+                </div>
+
+
+                <div class="divider"></div>
+
+
+                <!-- ANGGOTA TIM -->
+                <div class="section-heading">
+
+                    <div>
+                        <span class="step-label">LANGKAH 2</span>
+                        <h2>Anggota Tim</h2>
+                        <p>Tulis nama dan ambil foto lima anggota tim.</p>
+                    </div>
+
+                    <div class="heading-icon"><svg class="icon"><use href="#i-camera"/></svg></div>
+
+                </div>
+
+
+                <div id="playerList" class="player-list"></div>
+
+
+                <div class="divider"></div>
+
+
+                <!-- PENGATURAN -->
+                <div class="section-heading">
+
+                    <div>
+                        <span class="step-label">LANGKAH 3</span>
+                        <h2>Pengaturan Permainan</h2>
+                        <p>Waktu diskusi untuk setiap pertanyaan.</p>
+                    </div>
+
+                    <div class="heading-icon"><svg class="icon"><use href="#i-clock"/></svg></div>
+
+                </div>
+
+
+                <div class="settings-card">
+
+                    <div class="setting-row">
+
+                        <div>
+                            <strong>Gunakan Timer</strong>
+                            <small>Batasi waktu untuk berdiskusi.</small>
+                        </div>
+
+                        <label class="switch">
+                            <input type="checkbox" id="timerToggle" checked>
+                            <span class="switch-slider"></span>
+                        </label>
+
+                    </div>
+
+
+                    <div class="setting-row" id="timerSetting">
+
+                        <div>
+                            <strong>Durasi Menjawab</strong>
+                            <small>Waktu yang diberikan untuk setiap soal.</small>
+                        </div>
+
+                        <select id="timerDuration" disabled aria-label="Durasi menjawab">
+                            <option value="20" selected>20 detik</option>
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <!-- INFORMASI GAME -->
+                <div class="game-information">
+
+                    <div>
+                        <span><svg class="icon"><use href="#i-book"/></svg></span>
+                        <strong>2 Babak</strong>
+                    </div>
+
+                    <div>
+                        <span><svg class="icon"><use href="#i-help"/></svg></span>
+                        <strong>20 Soal</strong>
+                    </div>
+
+                    <div>
+                        <span><svg class="icon icon-fill"><use href="#i-star"/></svg></span>
+                        <strong>10 Poin / Soal</strong>
+                    </div>
+
+                </div>
+
+
+                <button type="button" id="startButton" class="primary-button">
+                    Mulai Permainan
+                    <span><svg class="icon"><use href="#i-rocket"/></svg></span>
+                </button>
+
+                <p class="privacy-note">
+                    <svg class="icon"><use href="#i-lock"/></svg> Foto pemain hanya digunakan sementara di perangkat ini.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================================= -->
+        <!-- HALAMAN PERMAINAN -->
+        <!-- ================================= -->
+
+        <section id="gameScreen" class="screen">
+
+            <div class="game-header">
+
+                <div>
+                    <span class="step-label" id="roundLabel">BABAK 1</span>
+                    <h2 id="roundTitle">Kenali Pancasila</h2>
+                </div>
+
+                <div class="score-card">
+                    <small id="gameTeamName">TIM A</small>
+                    <strong id="gameScore">0 <span>PTS</span></strong>
+                </div>
+
+            </div>
+
+
+            <!-- DAFTAR ANGGOTA -->
+            <div class="game-players" id="gamePlayers"></div>
+
+
+            <!-- PROGRESS -->
+            <div class="progress-card">
+
+                <div class="progress-information">
+                    <span id="questionCounter">Pertanyaan 1 dari 10</span>
+                    <strong id="progressPercent">10%</strong>
+                </div>
+
+                <div class="progress-track">
+                    <div id="progressBar" class="progress-fill"></div>
+                </div>
+
+            </div>
+
+
+            <!-- KARTU SOAL -->
+            <div class="question-card">
+
+                <div class="question-header">
+
+                    <span class="question-label">
+                        <svg class="icon"><use href="#i-bulb"/></svg> WAKTUNYA BERDISKUSI!
+                    </span>
+
+                    <div id="timerDisplay" class="timer-display">
+                        <svg class="icon"><use href="#i-clock"/></svg>
+                        <strong id="timerText">20</strong>
+                        <small>detik</small>
+                    </div>
+
+                </div>
+
+
+                <div class="question-content">
+
+                    <span class="question-number" id="questionNumber">SOAL 01</span>
+
+                    <h2 id="questionText">
+                        Pertanyaan akan muncul di sini.
+                    </h2>
+
+                </div>
+
+
+                <div id="optionsContainer" class="options-grid"></div>
+
+
+                <div id="answerFeedback" class="answer-feedback hidden"></div>
+
+
+                <div class="discussion-note">
+                    <span><svg class="icon"><use href="#i-chat"/></svg></span>
+
+                    <p>
+                        Diskusikan bersama seluruh anggota tim sebelum memilih jawaban.
+                        Setiap soal hanya memiliki satu jawaban dari tim.
+                    </p>
+                </div>
+
+
+                <button type="button" id="nextButton" class="primary-button hidden">
+                    Pertanyaan Berikutnya
+                    <span><svg class="icon"><use href="#i-arrow"/></svg></span>
+                </button>
+
+            </div>
+
+
+            <div class="game-footer">
+                <span><svg class="icon icon-fill"><use href="#i-star"/></svg> EduPlay</span>
+                <span>Belajar • Berdiskusi • Berkarya</span>
+            </div>
+
+        </section>
+
+
+        <!-- ================================= -->
+        <!-- HASIL BABAK -->
+        <!-- ================================= -->
+
+        <section id="roundResultScreen" class="screen">
+
+            <div class="result-card">
+
+                <div class="result-icon"><svg class="icon"><use href="#i-sparkles"/></svg></div>
+
+                <span class="step-label" id="roundResultLabel">
+                    BABAK 1 SELESAI
+                </span>
+
+                <h1>Kerja Bagus, Tim!</h1>
+
+                <p id="roundResultDescription">
+                    Kalian telah menyelesaikan babak pertama.
+                </p>
+
+
+                <div class="result-score">
+
+                    <small>Total Skor Babak</small>
+
+                    <strong id="roundScore">0</strong>
+
+                    <span>POIN</span>
+
+                </div>
+
+
+                <div class="result-stats">
+
+                    <div>
+                        <strong id="roundCorrect">0</strong>
+                        <small><svg class="icon"><use href="#i-check-circle"/></svg> Jawaban Benar</small>
+                    </div>
+
+                    <div>
+                        <strong id="roundWrong">0</strong>
+                        <small><svg class="icon"><use href="#i-x-circle"/></svg> Jawaban Salah</small>
+                    </div>
+
+                    <div>
+                        <strong id="roundTime">0:00</strong>
+                        <small><svg class="icon"><use href="#i-clock"/></svg> Waktu</small>
+                    </div>
+
+                </div>
+
+
+                <button type="button" id="continueButton" class="primary-button">
+                    Lanjut ke Babak Berikutnya
+                    <span><svg class="icon"><use href="#i-arrow"/></svg></span>
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================================= -->
+        <!-- HASIL AKHIR -->
+        <!-- ================================= -->
+
+        <section id="finalScreen" class="screen">
+
+            <div class="result-card final-result">
+
+                <div class="result-icon"><svg class="icon"><use href="#i-trophy"/></svg></div>
+
+                <span class="step-label">PERMAINAN SELESAI</span>
+
+                <h1>Hebat Sekali!</h1>
+
+                <p>
+                    Tim kalian telah menyelesaikan seluruh tantangan EduPlay.
+                </p>
+
+
+                <div class="result-score">
+
+                    <small>Total Skor Akhir</small>
+
+                    <strong id="finalScore">0</strong>
+
+                    <span>POIN</span>
+
+                </div>
+
+
+                <div class="result-stats">
+
+                    <div>
+                        <strong id="finalCorrect">0</strong>
+                        <small><svg class="icon"><use href="#i-check-circle"/></svg> Jawaban Benar</small>
+                    </div>
+
+                    <div>
+                        <strong id="finalWrong">0</strong>
+                        <small><svg class="icon"><use href="#i-x-circle"/></svg> Jawaban Salah</small>
+                    </div>
+
+                    <div>
+                        <strong id="finalTime">0:00</strong>
+                        <small><svg class="icon"><use href="#i-clock"/></svg> Total Waktu</small>
+                    </div>
+
+                </div>
+
+
+                <div class="final-message">
+                    <svg class="icon icon-fill"><use href="#i-star"/></svg> Terus gunakan teknologi untuk hal-hal positif dan bermanfaat!
+                </div>
+
+
+                <button type="button" id="restartButton" class="primary-button">
+                    Main Lagi
+                    <span><svg class="icon"><use href="#i-refresh"/></svg></span>
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================================= -->
+    <!-- MODAL KAMERA -->
+    <!-- ================================= -->
+
+    <div id="cameraModal" class="camera-modal hidden">
+
+        <div class="camera-card">
+
+            <div class="camera-header">
+
+                <div>
+                    <span class="step-label">FOTO PEMAIN</span>
+                    <h2>Ambil Foto</h2>
+                    <p>Posisikan wajah di tengah kamera.</p>
+                </div>
+
+                <button type="button" id="closeCamera" class="close-camera" aria-label="Tutup">
+                    <svg class="icon"><use href="#i-x"/></svg>
+                </button>
+
+            </div>
+
+
+            <div class="camera-preview">
+
+                <video
+                    id="cameraVideo"
+                    autoplay
+                    playsinline
+                    muted>
+                </video>
+
+                <canvas id="cameraCanvas" class="hidden"></canvas>
+
+            </div>
+
+
+            <div id="cameraError" class="camera-error hidden"></div>
+
+
+            <div class="camera-actions">
+
+                <button type="button" id="capturePhoto" class="primary-button">
+                    <svg class="icon"><use href="#i-camera"/></svg> Jepret Foto
+                </button>
+
+                <button type="button" id="retakePhoto" class="secondary-button hidden">
+                    Ambil Ulang
+                </button>
+
+                <button type="button" id="savePhoto" class="primary-button hidden">
+                    Gunakan Foto <svg class="icon"><use href="#i-check"/></svg>
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="questions.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
