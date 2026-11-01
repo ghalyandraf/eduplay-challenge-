@@ -148,7 +148,7 @@ function createPlayerForms() {
                     class="camera-trigger"
                     data-player="${i}"
                 >
-                    📷 Ambil Foto
+                    Ambil Foto
                 </button>
 
             </div>
